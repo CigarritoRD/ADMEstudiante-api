@@ -5,13 +5,12 @@ import cors from "cors";
 import EstudiantesRoutes from "./routes/EstudiantesRoutes.js";
 import AsistenciasRoutes from "./routes/AsistenciasRoutes.js";
 
+dotenv.config();
 const app = express();
 app.use(express.json());
-dotenv.config();
-
-conectarDB();
 
 app.use(cors());
+conectarDB();
 
 app.use("/api/estudiantes", EstudiantesRoutes);
 app.use("/api/lista", AsistenciasRoutes);
